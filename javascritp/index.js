@@ -8,6 +8,11 @@ function rollThedice() {
         var ranDomL = Math.floor(Math.random() * 6) + 1;
         var ranDomR = Math.floor(Math.random() * 6) + 1;
 
+    if(document.querySelector(".win")){
+        document.querySelector(".win").classList.remove("win");
+        }
+       
+
         document.querySelector(".phdiceL").setAttribute("src",
             "/img/dice" + ranDomL + ".png");
 
@@ -15,13 +20,13 @@ function rollThedice() {
             "/img/dice" + ranDomR + ".png");
 
     if(ranDomL > ranDomR){
-        document.querySelector("h1").innerHTML = ("Moon 1 " + "You go to Thee Moon 🚀")
-
+        document.querySelector("h1").innerHTML = ("Moon 1 " + " You go to Thee Moon 🚀")
+        document.querySelector(".phdiceL").classList.add("win");
     }
 
     else if (ranDomL < ranDomR){
-        document.querySelector("h1").innerHTML =("Moon 2 "  +  "You go to Thee Moon 🚀" )
-   
+        document.querySelector("h1").innerHTML =("Moon 2 "  +  " You go to Thee Moon 🚀" )
+        document.querySelector(".phdiceR").classList.add("win");
        }
 
     else {
